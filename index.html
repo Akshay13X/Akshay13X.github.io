@@ -281,8 +281,8 @@
 <style>
   #chatbot-button {
     position: fixed;
-    bottom: 90px;
-    left: 20px; /* Moved to left */
+    bottom: 20px; /* Moved closer to the edge */
+    left: 20px; /* Bottom left */
     background: #0A0F1B;
     border-radius: 50%;
     width: 60px;
@@ -304,8 +304,8 @@
 
   #chatbot-window {
     position: fixed;
-    bottom: 160px;
-    left: 20px; /* Match left placement */
+    bottom: 90px;
+    left: 20px;
     width: 300px;
     height: 400px;
     background: #1A2333;
@@ -325,8 +325,8 @@
 </style>
 
 <!-- Chatbot Button -->
-<div id="chatbot-button" title="Chat with DRx Bot">
-  <img src="https://i.imgur.com/KOwq6hC.png" alt="Chatbot Logo">
+<div id="chatbot-button" title="Chat with PharmaBot">
+  <img src="symbol.png" alt="PharmaBot Logo">
 </div>
 
 <!-- Chatbot Window -->
@@ -343,6 +343,5 @@
     chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
   });
 </script>
-
 </body>
 </html>
