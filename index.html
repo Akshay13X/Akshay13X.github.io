@@ -25,12 +25,12 @@
       font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #0A0F1B url('circuit-bg.png') repeat; /* Dark background with circuit pattern */
+      background: #0A0F1B url('circuit-bg.png') repeat;
       color: #e0e0e0;
       animation: fadeIn 1s ease-out;
     }
     header {
-      background: linear-gradient(90deg, #00DDEB, #00FFAA); /* Gradient matching the image */
+      background: linear-gradient(90deg, #00DDEB, #00FFAA);
       color: #0A0F1B;
       text-align: center;
       padding-bottom: 20px;
@@ -178,7 +178,7 @@
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
-      right: 20px;
+      left: 20px; /* CHANGED from right to left */
       background: linear-gradient(90deg, #00DDEB, #00FFAA);
       color: #0A0F1B;
       border-radius: 50%;
@@ -277,8 +277,6 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" width="40" height="40" alt="WhatsApp">
 </a>
 
-</div>
-
 <df-messenger
   project-id="diagnobot-ifuy"
   agent-id="08f09d08-f2f1-424c-b7b6-04465a33ea14"
@@ -289,5 +287,6 @@
   wait-open
   chat-icon="https://i.imgur.com/KOwq6hC.png"
 ></df-messenger>
+
 </body>
 </html>
