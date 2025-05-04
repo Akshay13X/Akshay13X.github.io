@@ -277,14 +277,13 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" width="40" height="40" alt="WhatsApp">
 </a>
 
-
 <!-- Chatbot Styles -->
 <style>
   #chatbot-button {
     position: fixed;
-    bottom: 90px; /* Raised above WhatsApp button */
-    right: 20px;
-    background: #00FFAA;
+    bottom: 90px;
+    left: 20px; /* Moved to left */
+    background: #0A0F1B;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -294,17 +293,19 @@
     justify-content: center;
     cursor: pointer;
     z-index: 9999;
+    border: 2px solid #00FFAA;
   }
 
   #chatbot-button img {
     width: 35px;
     height: 35px;
+    filter: drop-shadow(0 0 5px #00FFAA); /* Neon glow */
   }
 
   #chatbot-window {
     position: fixed;
-    bottom: 160px; /* Raised with respect to button */
-    right: 20px;
+    bottom: 160px;
+    left: 20px; /* Match left placement */
     width: 300px;
     height: 400px;
     background: #1A2333;
@@ -324,8 +325,8 @@
 </style>
 
 <!-- Chatbot Button -->
-<div id="chatbot-button" title="Chat with me">
-  <img src="https://i.imgur.com/KOwq6hC.png" alt="Chatbot">
+<div id="chatbot-button" title="Chat with DRx Bot">
+  <img src="https://i.imgur.com/KOwq6hC.png" alt="Chatbot Logo">
 </div>
 
 <!-- Chatbot Window -->
@@ -342,5 +343,6 @@
     chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
   });
 </script>
+
 </body>
 </html>
