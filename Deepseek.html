@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat with DeepSeek</title>
+</head>
+<body>
+  <h1>Ask Something</h1>
+  <textarea id="userInput" placeholder="Ask a question..."></textarea><br>
+  <button onclick="askAI()">Send</button>
+  <p id="response"></p>
+
+  <script>
+    async function askAI() {
+      const input = document.getElementById("userInput").value;
+      const responseEl = document.getElementById("response");
+
+      responseEl.innerText = "Thinking...";
+
+      const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer YOUR_OPENROUTER_API_KEY",
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://yourgithubusername.github.io", // Replace with your GitHub Pages URL
+          "X-Title": "My GitHub Chat App"
+        },
+        body: JSON.stringify({
+          model: "deepseek/deepseek-r1:free",
+          messages: [
+            { role: "user", content: input }
+          ]
+        })
+      });
+
+      const data = await res.json();
+      responseEl.innerText = data.choices?.[0]?.message?.content || "No response.";
+    }
+  </script>
+</body>
+</html>
