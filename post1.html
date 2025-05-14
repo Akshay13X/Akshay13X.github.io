@@ -1,121 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="keywords" content="Pharmacist in Nagpur, Akshay Somkuwar, DRx, Pharmacy services, Health screenings, Medication counseling, Vaccinations Nagpur, Akshay13X, akshay13x">
+  <meta name="author" content="DRx Akshay Somkuwar">
+  <meta name="robots" content="index, follow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Importance of Medication Adherence</title>
-  <link rel="icon" href="https://i.imgur.com/KOwq6hC.png" type="image/png">
+  <title>DRx Akshay Somkuwar - Pharmacist</title>
+  <meta name="description" content="Official website of DRx Akshay Somkuwar, a trusted community pharmacist in Nagpur, Maharashtra.">
+  <link rel="icon" href="https://i.imgur.com/JGkNxQf.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    :root {
+      --primary: #00DDEB;
+      --secondary: #00FFAA;
+      --dark: #0A0F1B;
+      --card: #1A2333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 70px;
+    }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #0A0F1B url('circuit-bg.png') repeat;
-      color: #e0e0e0;
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background: var(--dark) url('https://i.imgur.com/JGkNxQf.png') repeat;
+      color: #e0e0e0;
       animation: fadeIn 1s ease-out;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(90deg, #00DDEB, #00FFAA);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--dark);
       text-align: center;
-      padding: 20px;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://i.imgur.com/JGkNxQf.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
       font-family: 'Orbitron', sans-serif;
-      color: #0A0F1B;
-      text-shadow: 0 0 10px #00FFAA;
+      font-size: 3rem;
+      color: var(--dark);
+      text-shadow: 0 0 10px var(--secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      margin: 1rem 0 0;
+      font-size: 1.2rem;
+      color: var(--dark);
+      position: relative;
+      z-index: 1;
     }
 
     nav {
-      background: #0A0F1B;
+      background: var(--dark);
       display: flex;
       justify-content: center;
-      padding: 10px 0;
-      flex-wrap: wrap;
-      border-bottom: 2px solid #00FFAA;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--secondary);
+      backdrop-filter: blur(10px);
     }
 
     nav a {
-      color: #00DDEB;
-      margin: 0 15px;
+      color: var(--primary);
+      margin: 0 1.5rem;
       text-decoration: none;
       font-family: 'Orbitron', sans-serif;
       font-weight: bold;
       font-size: 1rem;
-      transition: color 0.3s, text-shadow 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--secondary);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: #00FFAA;
-      text-shadow: 0 0 10px #00FFAA;
+      color: var(--secondary);
+      text-shadow: 0 0 10px var(--secondary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     h2 {
-      color: #00FFAA;
       font-family: 'Orbitron', sans-serif;
-      margin-top: 30px;
-      text-shadow: 0 0 5px #00DDEB;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px var(--secondary);
     }
 
-    p {
-      line-height: 1.6;
-      margin-bottom: 20px;
-      color: #ccc;
+    .profile-photo {
+      display: block;
+      margin: 0 auto 2rem;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--secondary);
+      animation: zoomIn 2s ease-out, float 6s ease-in-out infinite;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 200, 150, 0.3);
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.5);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    form {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: 3rem auto;
+      box-shadow: 0 0 20px rgba(0, 200, 150, 0.3);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      background: var(--dark);
+      color: #e0e0e0;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 10px var(--secondary);
+    }
+
+    form button {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--dark);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    form button:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px var(--secondary);
+    }
+
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 200, 150, 0.3);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .get-directions-button {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--dark);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      margin: 2rem auto;
+      transition: all 0.3s ease;
+    }
+
+    .get-directions-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--secondary);
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+      background: var(--card);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--secondary);
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--dark);
+      border-radius: 50%;
+      padding: 1rem;
+      box-shadow: 0 0 15px var(--secondary);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 0 25px var(--secondary);
     }
 
     footer {
-      background: #1A2333;
+      background: var(--card);
       color: #aaa;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-      font-size: 0.9rem;
-      border-top: 2px solid #00FFAA;
+      padding: 2rem;
+      margin-top: 4rem;
+      border-top: 2px solid var(--secondary);
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.6rem; }
-      nav a { margin: 8px; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      nav { padding: 0.5rem; flex-wrap: wrap; }
+      nav a { margin: 0.5rem; }
+      section { padding: 2rem 1rem; }
+      .profile-photo { width: 200px; height: 200px; }
+      .services { grid-template-columns: 1fr; }
+      .contact-info { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
 <header>
-  <h1>Importance of Medication Adherence</h1>
+  <h1>DRx Akshay Somkuwar</h1>
+  <p>Trusted Community Pharmacist</p>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="posts.html">Posts</a>
-  <a href="index.html#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+  <a href="#posts">Posts</a>
 </nav>
 
-<section>
-  <h2>Why It Matters</h2>
-  <p>Medication adherence is vital for achieving the intended outcomes of therapy. Skipping doses or not following the prescribed schedule can lead to treatment failure, complications, or hospitalization.</p>
-  <p>Pharmacists play a crucial role in helping patients understand their medications and stay on track through counseling and regular check-ins.</p>
-  <p>Always ask your pharmacist if you have any doubts or if you experience side effects. We are here to help you achieve the best possible health outcomes.</p>
+<section id="about">
+  <h2>About Me</h2>
+  <img class="profile-photo" src="https://i.imgur.com/KOwq6hC.png" alt="DRx Akshay Somkuwar">
+  <p style="text-align:center; max-width: 800px; margin: 0 auto;">
+    Hello! I'm DRx Akshay Somkuwar, a licensed pharmacist dedicated to providing personalized healthcare and medication management services. With years of experience, I am committed to improving patient outcomes and wellness through comprehensive pharmaceutical care and patient education.
+  </p>
+</section>
+
+<section id="services">
+  <h2>My Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Medication Counseling</h3>
+      <p>Expert guidance on medication usage, potential interactions, and side effects to ensure safe and effective treatment outcomes.</p>
+    </div>
+    <div class="service-card">
+      <h3>Health Screenings</h3>
+      <p>Comprehensive health assessments including blood pressure monitoring, diabetes screening, and cholesterol testing for preventive care.</p>
+    </div>
+    <div class="service-card">
+      <h3>Vaccination Services</h3>
+      <p>Professional immunization services following the latest healthcare guidelines to protect you and your family's health.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-info">
+    <div class="contact-item">
+      <h3 style="color: var(--primary);">Email</h3>
+      <a href="mailto:akshay.somkuwar369@gmail.com">akshay.somkuwar369@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <h3 style="color: var(--primary);">Phone</h3>
+      <a href="tel:7066224406">+91 7066224406</a>
+    </div>
+    <div class="contact-item">
+      <h3 style="color: var(--primary);">Location</h3>
+      <p>Nagpur, Maharashtra, India</p>
+    </div>
+  </div>
+
+  <form action="mailto:akshay.somkuwar369@gmail.com" method="post" enctype="text/plain">
+    <h3 style="color: var(--primary); text-align: center; margin-bottom: 1.5rem;">Send a Message</h3>
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <h3 style="color: var(--primary); text-align: center; margin: 3rem 0 1.5rem;">Find Me Here</h3>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.062550376608!2d79.04791117501645!3d21.107145187456222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1251b0e451f%3A0x38cf1b1c0195cf97!2sNagpur%20Maharashtra%20440014!5e0!3m2!1sen!2sin!4v1714133722365!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <a class="get-directions-button" href="https://maps.app.goo.gl/7KDHXSp3EQ57Be338" target="_blank" rel="noopener noreferrer">
+    Get Directions
+  </a>
+</section>
+
+<section id="posts">
+  <h2>Latest Posts</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Understanding Medication Interactions</h3>
+      <p>Learn about common medication interactions, their potential risks, and how to safely manage multiple medications to avoid adverse effects.</p>
+      <a href="#" style="color: var(--secondary); text-decoration: none; display: inline-block; margin-top: 1rem;">Read more →</a>
+    </div>
+    <div class="service-card">
+      <h3>Seasonal Allergies: What You Need to Know</h3>
+      <p>Comprehensive guide to managing seasonal allergies, including prevention strategies, treatment options, and when to seek professional help.</p>
+      <a href="#" style="color: var(--secondary); text-decoration: none; display: inline-block; margin-top: 1rem;">Read more →</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 DRx Akshay Somkuwar - All Rights Reserved.</p>
+  <p>© 2025 DRx Akshay Somkuwar - All Rights Reserved.</p>
 </footer>
 
+<a class="whatsapp-button" href="https://wa.me/917066224406" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" width="24" height="24" alt="WhatsApp">
+</a>
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="INmamZELJyHEqIdyKthfE";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
